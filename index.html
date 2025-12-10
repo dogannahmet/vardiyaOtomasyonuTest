@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vardiya Programı</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Vardiya Programı</h1>
+        </header>
+
+        <div class="main-content">
+            <!-- Takım Yönetimi Bölümü -->
+            <section class="team-management">
+                <h2>Takım Yönetimi</h2>
+                <div class="team-controls">
+                    <div class="team-selector">
+                        <label for="teamSelect">Takım Seç:</label>
+                        <select id="teamSelect">
+                            <option value="">Yeni Takım Oluştur</option>
+                        </select>
+                        <button id="newTeamBtn" class="btn btn-primary">Yeni Takım</button>
+                        <button id="deleteTeamBtn" class="btn btn-danger" style="display:none;">Takımı Sil</button>
+                    </div>
+                    <div class="team-form" id="teamForm" style="display:none;">
+                        <input type="text" id="teamNameInput" placeholder="Takım adı">
+                        <button id="saveTeamBtn" class="btn btn-primary">Kaydet</button>
+                        <button id="cancelTeamBtn" class="btn btn-secondary">İptal</button>
+                    </div>
+                </div>
+
+                <div class="person-management" id="personManagement" style="display:none;">
+                    <h3>Kişiler</h3>
+                    <div class="person-form">
+                        <input type="text" id="personNameInput" placeholder="Kişi adı">
+                        <button id="addPersonBtn" class="btn btn-primary">Kişi Ekle</button>
+                    </div>
+                    <ul class="person-list" id="personList"></ul>
+                </div>
+            </section>
+
+            <!-- Program Kontrolleri -->
+            <section class="schedule-controls">
+                <h2>Program Kontrolleri</h2>
+                <div class="view-selector">
+                    <label>
+                        <input type="radio" name="viewType" value="weekly" checked>
+                        Haftalık
+                    </label>
+                    <label>
+                        <input type="radio" name="viewType" value="monthly">
+                        Aylık
+                    </label>
+                </div>
+                <div class="date-selector" id="weeklyDateSelector">
+                    <label for="weeklyMonthSelect">Ay:</label>
+                    <input type="month" id="weeklyMonthSelect">
+                    <label for="weekSelect">Hafta:</label>
+                    <select id="weekSelect">
+                        <option value="">Tüm Haftalar</option>
+                    </select>
+                </div>
+                <div class="month-selector" id="monthlyDateSelector" style="display:none;">
+                    <label for="monthSelect">Ay:</label>
+                    <input type="month" id="monthSelect">
+                </div>
+                <input type="hidden" id="startDate">
+                <input type="hidden" id="endDate">
+                <div class="action-buttons">
+                    <button id="generateBtn" class="btn btn-success">Otomatik Oluştur</button>
+                    <button id="clearBtn" class="btn btn-warning">Temizle</button>
+                    <button id="shareBtn" class="btn btn-info">Paylaş</button>
+                    <button id="exportBtn" class="btn btn-secondary">Export</button>
+                    <button id="importBtn" class="btn btn-secondary">Import</button>
+                    <input type="file" id="importFile" accept=".json" style="display:none;">
+                </div>
+            </section>
+
+            <!-- Program Tablosu -->
+            <section class="schedule-section">
+                <h2>Vardiya Programı</h2>
+                <div id="scheduleContainer">
+                    <p class="no-team-message">Lütfen bir takım seçin veya oluşturun.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Vardiya Seçim Modal -->
+    <div id="shiftModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Vardiya Seç</h3>
+            <div class="shift-options">
+                <button class="shift-btn shift-918" data-shift="918">918</button>
+                <button class="shift-btn shift-1322" data-shift="1322">1322</button>
+                <button class="shift-btn shift-1500" data-shift="1500">1500</button>
+                <button class="shift-btn shift-off" data-shift="Off">Off</button>
+                <button class="shift-btn shift-manual shift-rapor" data-shift="Rapor">Rapor</button>
+                <button class="shift-btn shift-manual shift-yillik" data-shift="Yıllık İzin">Yıllık İzin</button>
+                <button class="shift-btn shift-manual shift-ucretsiz" data-shift="Ücretsiz İzin">Ücretsiz İzin</button>
+                <button class="shift-btn shift-clear" data-shift="">Temizle</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

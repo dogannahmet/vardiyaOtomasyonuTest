@@ -1,0 +1,567 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #667eea;
+}
+
+header h1 {
+    color: #667eea;
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+section {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+section h2 {
+    color: #667eea;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+section h3 {
+    color: #555;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+/* Takım Yönetimi */
+.team-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.team-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.team-selector label {
+    font-weight: 600;
+}
+
+.team-selector select {
+    padding: 8px 12px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    min-width: 200px;
+}
+
+.team-form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.team-form input {
+    padding: 8px 12px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    flex: 1;
+    max-width: 300px;
+}
+
+.person-management {
+    margin-top: 20px;
+}
+
+.person-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.person-form input {
+    padding: 8px 12px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    flex: 1;
+    max-width: 300px;
+}
+
+.person-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.person-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background: white;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.person-item span {
+    font-weight: 500;
+}
+
+.person-item button {
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+/* Butonlar */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+    background: #667eea;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #5568d3;
+}
+
+.btn-danger {
+    background: #e74c3c;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #c0392b;
+}
+
+.btn-success {
+    background: #27ae60;
+    color: white;
+}
+
+.btn-success:hover {
+    background: #229954;
+}
+
+.btn-warning {
+    background: #f39c12;
+    color: white;
+}
+
+.btn-warning:hover {
+    background: #e67e22;
+}
+
+.btn-info {
+    background: #3498db;
+    color: white;
+}
+
+.btn-info:hover {
+    background: #2980b9;
+}
+
+.btn-secondary {
+    background: #95a5a6;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #7f8c8d;
+}
+
+/* Program Kontrolleri */
+.schedule-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.view-selector {
+    display: flex;
+    gap: 20px;
+}
+
+.view-selector label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.date-selector,
+.month-selector {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.date-selector label,
+.month-selector label {
+    font-weight: 600;
+}
+
+.date-selector input[type="date"],
+.date-selector input[type="month"],
+.month-selector input[type="month"] {
+    padding: 8px 12px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.date-selector select {
+    padding: 8px 12px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    min-width: 200px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.warnings {
+    padding: 10px;
+    background: #fff3cd;
+    border: 1px solid #ffc107;
+    border-radius: 5px;
+    color: #856404;
+    display: none;
+}
+
+.warnings.show {
+    display: block;
+}
+
+.warnings ul {
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+/* Program Tablosu */
+.schedule-section {
+    overflow-x: auto;
+}
+
+.no-team-message {
+    text-align: center;
+    padding: 40px;
+    color: #999;
+    font-size: 1.2em;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    margin-top: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.schedule-table th,
+.schedule-table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.schedule-table th {
+    background: #667eea;
+    color: white;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.schedule-table th:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 11;
+    background: #667eea;
+}
+
+.schedule-table td:first-child {
+    position: sticky;
+    left: 0;
+    background: #f8f9fa;
+    font-weight: 600;
+    z-index: 9;
+}
+
+.schedule-cell {
+    min-width: 80px;
+    min-height: 50px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.schedule-cell:hover {
+    background: #e8f4f8 !important;
+    transform: scale(1.05);
+}
+
+/* Vardiya Renkleri */
+.shift-918 {
+    background: #3498db !important;
+    color: white;
+    font-weight: 600;
+}
+
+.shift-1322 {
+    background: #e74c3c !important;
+    color: white;
+    font-weight: 600;
+}
+
+.shift-1500 {
+    background: #2ecc71 !important;
+    color: white;
+    font-weight: 600;
+}
+
+.shift-off {
+    background: #ecf0f1 !important;
+    color: #333;
+    font-weight: 600;
+}
+
+.shift-rapor {
+    background: #f39c12 !important;
+    color: white;
+    font-weight: 600;
+}
+
+.shift-yillik {
+    background: #9b59b6 !important;
+    color: white;
+    font-weight: 600;
+}
+
+.shift-ucretsiz {
+    background: #e67e22 !important;
+    color: white;
+    font-weight: 600;
+}
+
+/* Modal */
+/* Paylaşım Link Container */
+.share-link-container {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+    align-items: center;
+}
+
+.share-link-container input {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    background: #f8f9fa;
+    cursor: text;
+}
+
+.share-link-container input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.share-link-container button {
+    padding: 10px 20px;
+    white-space: nowrap;
+}
+
+.share-success {
+    margin-top: 15px;
+    padding: 10px;
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    color: #155724;
+    text-align: center;
+}
+
+.share-success p {
+    margin: 0;
+    font-weight: 600;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s;
+}
+
+.modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    animation: slideDown 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #000;
+}
+
+.shift-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.shift-btn {
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.shift-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.shift-btn.shift-clear {
+    grid-column: 1 / -1;
+    background: #e74c3c;
+    color: white;
+    border-color: #e74c3c;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    .team-selector,
+    .date-selector {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .action-buttons .btn {
+        width: 100%;
+    }
+
+    .schedule-table {
+        font-size: 12px;
+    }
+
+    .schedule-table th,
+    .schedule-table td {
+        padding: 8px 4px;
+    }
+
+    .shift-options {
+        grid-template-columns: 1fr;
+    }
+}
+
